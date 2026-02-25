@@ -201,7 +201,8 @@ namespace SelectedWhitespace
                                             baseFontSize,
                                             isLineEnding,
                                             width: isLineEnding ? null : bounds.Width,
-                                            leftMargin: isLineEnding ? Constants.LineEndingLeftMargin : 0);
+                                            leftMargin: isLineEnding ? Constants.LineEndingLeftMargin : 0,
+                                            topMargin: isLineEnding ? Constants.LineEndingTopMargin : 0);
 
             var top = bounds.Top + WhitespaceGlyphFactory.GetBaselineAlignmentOffset(baseFontSize, isLineEnding);
 

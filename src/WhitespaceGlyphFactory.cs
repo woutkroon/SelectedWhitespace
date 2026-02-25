@@ -42,7 +42,8 @@ namespace SelectedWhitespace
             double? width = null,
             double? height = null,
             string tooltip = null,
-            double leftMargin = 2)
+            double leftMargin = 2,
+            double topMargin = 0)
         {
             var fontSize = baseFontSize;
             if (isLineEnding)
@@ -55,13 +56,13 @@ namespace SelectedWhitespace
                 Text = symbol,
                 FontFamily = typeface.FontFamily,
                 FontSize = fontSize,
-                FontStyle = isLineEnding ? FontStyles.Italic : FontStyles.Normal,
+                FontStyle = FontStyles.Normal,
                 Foreground = isLineEnding ? _lineEndingBrush : _whitespaceBrush,
             };
 
-            if (leftMargin > 0)
+            if (leftMargin > 0 || topMargin > 0)
             {
-                textBlock.Margin = new Thickness(leftMargin, 0, 0, 0);
+                textBlock.Margin = new Thickness(leftMargin, topMargin, 0, 0);
             }
 
             if (width.HasValue)
